@@ -23,7 +23,7 @@ public class TypeTransaction {
     private Long id;
     @Column(name = "typeName")
     private String typeName;
-    @Column(name = "type")
+    @Column(name = "type", length = 1)
     private String type;
 
 }
