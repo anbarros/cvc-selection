@@ -22,6 +22,9 @@ public class Account {
     @Column(name = "name")
     @NotBlank
     private String name;
+    @Column(name = "numberAccount")
+    @NotBlank
+    private String numberAccount;
     @Column(name = "document")
     @NotBlank
     private String document;
