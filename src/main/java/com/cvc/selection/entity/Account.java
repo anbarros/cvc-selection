@@ -1,10 +1,11 @@
 package com.cvc.selection.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import lombok.experimental.Accessors;
-
-import javax.persistence.*;
 
 @Getter
 @Setter
@@ -15,7 +16,8 @@ import javax.persistence.*;
 @Table(name = "account")
 public class Account {
     @Id
-    @Column(name = "idCount")
+    @Column(name = "idAccount")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCount;
     @Column(name = "name")
     @NotBlank

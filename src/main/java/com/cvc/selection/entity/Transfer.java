@@ -39,7 +39,6 @@ public class Transfer {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_destination_account")
     private Account destination;
-    @Column(columnDefinition = "DATE", name = "transfer_type")
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_type_transaction")
