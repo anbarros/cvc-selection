@@ -17,14 +17,10 @@ import lombok.experimental.Accessors;
 public class Account {
     @Id
     @Column(name = "idAccount")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCount;
+    private Long numberAccount;
     @Column(name = "name")
     @NotBlank
     private String name;
-    @Column(name = "numberAccount")
-    @NotBlank
-    private String numberAccount;
     @Column(name = "document")
     @NotBlank
     private String document;

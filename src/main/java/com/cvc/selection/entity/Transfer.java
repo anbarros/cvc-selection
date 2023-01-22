@@ -35,10 +35,10 @@ public class Transfer {
     private LocalDate scheduleDate;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_origin_account")
-    private Account origin;
+    private Account accountOrigin;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_destination_account")
-    private Account destination;
+    private Account accountDestination;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_type_transaction")

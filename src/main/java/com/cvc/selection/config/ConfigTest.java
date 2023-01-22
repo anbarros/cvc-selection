@@ -19,9 +19,9 @@ public class ConfigTest implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Account ac1 = new Account(null, "Ec Bahia", "12345","01464578654");
-        Account ac2 = new Account(null, "City Club", "2345678","23464578654");
-        Account ac3 = new Account(null, "Salvador Esporte Clube", "212345","51464578654");
+        Account ac1 = new Account(12345L, "Ec Bahia","01464578654");
+        Account ac2 = new Account(2345678L, "City Club", "23464578654");
+        Account ac3 = new Account(212345L, "Salvador Esporte Clube", "51464578654");
         accountRepository.saveAll(Arrays.asList(ac1,ac2,ac3));
         TypeTransaction t1 = new TypeTransaction(null,"Dia Atual","A");
         TypeTransaction t2 = new TypeTransaction(null,"Menor que 10 dias","B");
