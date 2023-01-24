@@ -1,6 +1,7 @@
 package com.cvc.selection.entity;
 
 import com.cvc.selection.enums.TransactionTypeEnum;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -33,9 +34,11 @@ public class Transfer {
     @NotNull
     private LocalDate scheduleDate;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     @JoinColumn(name = "fk_origin_account")
     private Account accountOrigin;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     @JoinColumn(name = "fk_destination_account")
     private Account accountDestination;
 
