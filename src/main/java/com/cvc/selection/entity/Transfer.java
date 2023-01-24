@@ -1,11 +1,9 @@
 package com.cvc.selection.entity;
 
+import com.cvc.selection.enums.TransactionTypeEnum;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.math.BigDecimal;
@@ -16,6 +14,7 @@ import java.time.LocalDate;
 @Accessors(chain=true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "tranfer")
 public class Transfer {
@@ -25,8 +24,8 @@ public class Transfer {
     private Long id;
     @Column(name = "transferValue")
     private BigDecimal transferValue;
-    @Column(name = "tax")
-    private BigDecimal tax;
+    @Column(name = "fee")
+    private BigDecimal fee;
     @Column(columnDefinition = "DATE", name = "transfer_date")
     @NotNull
     private LocalDate transferDate;
@@ -40,8 +39,7 @@ public class Transfer {
     @JoinColumn(name = "fk_destination_account")
     private Account accountDestination;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_type_transaction")
-    private TypeTransaction typeTransaction;
+    @Enumerated(EnumType.STRING)
+    private TransactionTypeEnum transactionType;
 
 }
